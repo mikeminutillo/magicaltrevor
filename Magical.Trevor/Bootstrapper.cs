@@ -46,7 +46,8 @@ namespace Magical.Trevor
             return new Dictionary<Type, IBinder>
             {
                 { typeof(TextBox), new TextBoxBinder() }, 
-                { typeof(Button), new ButtonBinder() }
+                { typeof(Button), new ButtonBinder() }, 
+                { typeof(Placeholder), new PlaceholderBinder() }
             };
         }
     }

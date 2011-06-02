@@ -48,6 +48,13 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Search\SearchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Search\SearchView.Designer.cs">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Search\SearchViewModel.cs" />
     <Compile Include="Views\ShellView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,6 +71,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Search\SearchView.resx">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ShellView.resx">
       <DependentUpon>ShellView.cs</DependentUpon>
     </EmbeddedResource>

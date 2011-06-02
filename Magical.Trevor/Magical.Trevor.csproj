@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Binder.cs" />
     <Compile Include="Binders\ButtonBinder.cs" />
+    <Compile Include="Binders\PlaceholderBinder.cs" />
     <Compile Include="Binders\TextBoxBinder.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controls\NotFound.cs">
