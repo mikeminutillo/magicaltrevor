@@ -10,7 +10,7 @@ using System.Drawing.Drawing2D;
 
 namespace Magical.Trevor.Controls
 {
-    public partial class NotFound : Control
+    partial class NotFound : Control
     {
         public NotFound()
         {
