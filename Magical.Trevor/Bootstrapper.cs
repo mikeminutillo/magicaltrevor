@@ -1,6 +1,9 @@
 ﻿using System.Threading;
 using System.Windows.Forms;
 using Magical.Trevor.Controls;
+using System.Collections.Generic;
+using System;
+using Magical.Trevor.Binders;
 
 namespace Magical.Trevor
 {
@@ -35,7 +38,15 @@ namespace Magical.Trevor
 
         protected virtual IViewBinder CreateViewBinder()
         {
-            return new ViewBinder();
+            return new ViewBinder(CreateBinders());
+        }
+
+        protected virtual IDictionary<Type, IBinder> CreateBinders()
+        {
+            return new Dictionary<Type, IBinder>
+            {
+                { typeof(TextBox), new TextBoxBinder() }
+            };
         }
     }
 

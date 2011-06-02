@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinderFactory.cs" />
+    <Compile Include="Binders\TextBoxBinder.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controls\NotFound.cs">
       <SubType>Component</SubType>
