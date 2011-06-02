@@ -7,12 +7,10 @@ using System.ComponentModel;
 
 namespace Magical.Trevor.Binders
 {
-    public class TextBoxBinder : Binder
+    public class TextBoxBinder : Binder<TextBox>
     {
-        protected override IDisposable BindCore(Control ctl, object viewModel)
+        protected override void BindCore(Lifetime lifetime, TextBox ctl, object viewModel)
         {
-            var binding = new Lifetime();
-
             var properties = TypeDescriptor.GetProperties(viewModel)
                 .OfType<PropertyDescriptor>()
                 .ToLookup(x => x.Name, x => x)
@@ -21,10 +19,8 @@ namespace Magical.Trevor.Binders
             var textProperty = properties[ctl.Name].FirstOrDefault();
             if (textProperty != null && textProperty.PropertyType == typeof(string))
             {
-                binding.Add(AddBinding(ctl, "Text", viewModel, textProperty.Name));
+                lifetime.Add(CreateBinding(ctl, "Text", viewModel, textProperty.Name));
             }
-
-            return binding;
         }
     }
 }

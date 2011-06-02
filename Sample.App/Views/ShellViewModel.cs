@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Magical.Trevor;
+using System.Windows.Forms;
 
 namespace Sample.App.Views
 {
@@ -14,6 +15,11 @@ namespace Sample.App.Views
         {
             get { return _fullName; }
             set { _fullName = value; NotifyPropertyChanged("FullName");  }
+        }
+
+        public void Go()
+        {
+            MessageBox.Show(FullName);
         }
     }
 }

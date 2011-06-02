@@ -27,9 +27,8 @@ namespace Magical.Trevor
 
             foreach (var ctl in GetAllControls(view))
             {
-                var binder = GetBinderFor(ctl.GetType()) ?? NullBinder.Instance;
-                var ctlBinding = binder.Bind(ctl, viewModel);
-                binding.Add(ctlBinding);
+                var binder = GetBinderFor(ctl.GetType());
+                binder.Bind(binding, ctl, viewModel);
             }
 
             return binding;
@@ -40,7 +39,8 @@ namespace Magical.Trevor
             IBinder result;
             if (_binders.TryGetValue(type, out result))
                 return result;
-            return NullBinder.Instance;
+            _binders[type] = NullBinder.Instance;
+            return _binders[type];
         }
 
         private IEnumerable<Control> GetAllControls(Control root)

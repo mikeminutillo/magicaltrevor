@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Magical.Trevor
 {
-    sealed class Lifetime : IDisposable
+    public sealed class Lifetime : IDisposable
     {
         private readonly IList<object> _objects = new List<object>();
         private readonly object _lock = new object();
