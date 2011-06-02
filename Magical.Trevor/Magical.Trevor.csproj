@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +42,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controls\NotFound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Placeholder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Window.Designer.cs">
+      <DependentUpon>Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependecies.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="Execute.cs" />
+    <Compile Include="Lifetime.cs" />
+    <Compile Include="NotifiesOfPropertyChangeOnUiThread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewBinder.cs" />
+    <Compile Include="ViewLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Window.resx">
+      <DependentUpon>Window.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
